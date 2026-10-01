@@ -12,17 +12,26 @@ export function KitchenRoom() {
         rotation={[-Math.PI / 2, 0, 0]}
         receiveShadow
       >
-        <planeGeometry
-          args={[room.width, room.depth]}
+        <planeGeometry args={[room.width, room.depth]} />
+        <meshStandardMaterial
+          color="#d8c3a5"
+          roughness={0.92}
+          metalness={0}
         />
-        <meshStandardMaterial color="#e7e5e4" />
       </mesh>
 
       <Grid
         args={[room.width, room.depth]}
         cellSize={0.25}
         sectionSize={1}
-        position={[0, 0.001, 0]}
+        cellColor="#bca98e"
+        sectionColor="#9f896d"
+        cellThickness={0.45}
+        sectionThickness={0.75}
+        fadeDistance={9}
+        fadeStrength={1.2}
+        infiniteGrid={false}
+        position={[0, 0.003, 0]}
       />
 
       <mesh
@@ -36,7 +45,11 @@ export function KitchenRoom() {
         <boxGeometry
           args={[room.width, room.height, 0.08]}
         />
-        <meshStandardMaterial color="#fafaf9" />
+        <meshStandardMaterial
+          color="#f4efe7"
+          roughness={0.96}
+          metalness={0}
+        />
       </mesh>
 
       <mesh
@@ -50,7 +63,41 @@ export function KitchenRoom() {
         <boxGeometry
           args={[0.08, room.height, room.depth]}
         />
-        <meshStandardMaterial color="#fafaf9" />
+        <meshStandardMaterial
+          color="#f4efe7"
+          roughness={0.96}
+          metalness={0}
+        />
+      </mesh>
+
+      <mesh
+        position={[
+          0,
+          0.065,
+          -room.depth / 2 + 0.055,
+        ]}
+        receiveShadow
+      >
+        <boxGeometry args={[room.width, 0.13, 0.06]} />
+        <meshStandardMaterial
+          color="#e2d7c8"
+          roughness={0.9}
+        />
+      </mesh>
+
+      <mesh
+        position={[
+          -room.width / 2 + 0.055,
+          0.065,
+          0,
+        ]}
+        receiveShadow
+      >
+        <boxGeometry args={[0.06, 0.13, room.depth]} />
+        <meshStandardMaterial
+          color="#e2d7c8"
+          roughness={0.9}
+        />
       </mesh>
     </group>
   );
