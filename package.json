@@ -26,10 +26,10 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/three": "latest",
-    "autoprefixer": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
     "typescript": "latest",
-    "vitest": "latest"
+    "vitest": "latest",
+    "@tailwindcss/postcss": "latest"
   }
 }
